@@ -1,0 +1,404 @@
+<!-- START: Header Title -->
+<div class="nk-header-title nk-header-title-full" id='home'>
+  <div class="bg-image">
+    <div style="background-image: url('assets/images/new/4.jpg');"></div>
+    <div class="bg-image-overlay" style="background-color: rgba(0,0,0, .6);"></div>
+  </div>
+  <div class="nk-header-table">
+    <div class="nk-header-table-cell">
+      <div class="container">
+
+        <h2 class="nk-subtitle text-white">FlyHigh Avia</h2>
+
+        <h1 class="nk-title display-3 text-white">Все для сервиса на высоте
+        </h1>
+
+
+        <div class="nk-gap"></div>
+        <div class="nk-header-text text-white">
+          <div class="nk-gap-4"></div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <a class="nk-header-title-scroll-down text-white" [ngx-scroll-to]="'about'">
+      <span class="pe-7s-angle-down"></span>
+    </a>
+  </div>
+
+</div>
+<!-- END: Header Title -->
+
+<!-- START: About Our Agency -->
+<div class="bg-white" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-xs-center">
+        <div class="nk-gap-4 mt-9"></div>
+
+        <h2 class="display-4">FlyHigh Avia</h2>
+        <div class="nk-gap mnt-5"></div>
+
+        <p>
+          Компания ФХ независимая Украинская компания, специализирующаяся на комплексных решениях по поставкам бортовых товаров и услуг.
+          Как компания полного цикла мы предоставляем полный комплекс услуг по разработке концепций, проектирования,  дизайна, изготовления и доставки необходимых товаров или услуг для наших клиентов.
+        </p>
+
+        <!-- <img src="assets/images/signature.png" alt="" class="nk-img-fit"> -->
+
+        <div class="nk-gap-4 mt-25"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END: About Our Agency -->
+
+<!-- START: Features -->
+<div class="nk-box bg-dark-1 text-white">
+  <div class="bg-image bg-image-parallax" style="background-image: url('assets/images/bg-pattern.jpg');"></div>
+  <div class="nk-gap-5 mnt-6"></div>
+  <div class="container">
+    <div class="row vertical-gap">
+
+      <div class="col-md-6 col-lg-3">
+        <div [routerLink]='["/service/client_love"]' class="nk-ibox-1 service-item">
+          <div class="nk-ibox-icon">
+            <span class="pe-7s-like"></span>
+          </div>
+          <div class="nk-ibox-cont">
+            <div class="nk-ibox-text">За что нас любят клиенты</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div [routerLink]='["/service/garantii"]' class="nk-ibox-1 service-item">
+          <div class="nk-ibox-icon">
+            <span class="pe-7s-star"></span>
+          </div>
+          <div class="nk-ibox-cont">
+            <div class="nk-ibox-text">Мы гарантируем</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div [routerLink]='["/service/etapy"]' class="nk-ibox-1 service-item">
+          <div class="nk-ibox-icon">
+            <span class="pe-7s-clock"></span>
+          </div>
+          <div class="nk-ibox-cont">
+            <div class="nk-ibox-text">Этапы выполнения заказа</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div [routerLink]='["/service/sroky_ceny"]' class="nk-ibox-1 service-item">
+          <div class="nk-ibox-icon">
+            <span class="pe-7s-portfolio"></span>
+          </div>
+          <div class="nk-ibox-cont">
+            <div class="nk-ibox-text" style='text-align: center'>Сроки и цены</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="nk-gap-5 mnt-6"></div>
+</div>
+<!-- END: Features -->
+
+<!-- START: Portfolio -->
+<div class="nk-box bg-white" id="projects">
+  <div class="nk-gap-4 mt-5"></div>
+
+  <h2 class="text-xs-center display-4">Наш каталог</h2>
+
+  <div class="nk-gap mnt-6"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="text-xs-center">
+          Вы еще решаете, что вам нужно, а мы уже везем ваш заказ :)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nk-gap-2 mt-12"></div>
+  <div class="container">
+    <div class="nk-portfolio-list nk-isotope nk-isotope-3-cols">
+
+      <div class="nk-isotope-item" *ngFor='let category of categories | async'>
+        <div class="nk-portfolio-item nk-portfolio-item-square nk-portfolio-item-info-style-1">
+          <a [routerLink]="['/products', category.$key]" class="nk-portfolio-item-link"></a>
+          <div class="nk-portfolio-item-image">
+            <div [style.background-image]="getBackground(category.img)"></div>
+          </div>
+          <div class="nk-portfolio-item-info nk-portfolio-item-info-center text-xs-center">
+            <div>
+              <h2 class="portfolio-item-title h3">{{ category.title }}</h2>
+              <div class="portfolio-item-category">{{ category.subtitle }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="nk-gap-4 mt-15"></div>
+</div>
+<!-- END: Portfolio -->
+
+<!-- START: Reviews -->
+<div class="nk-box bg-dark-1 phrases">
+  <div class="bg-image bg-image-parallax" style="background-image: url('assets/images/bg-pattern.jpg');"></div>
+  <div class="nk-gap-5 mnt-6"></div>
+  <div class="nk-gap-3 hidden-sm-down"></div>
+  <div class="container-fluid">
+    <!-- START: Carousel -->
+
+    <mat-tab-group>
+
+      <mat-tab label="">
+        <div>
+          <blockquote class="nk-blockquote-style-1 text-white">
+            <p>Гостеприимство обречено на провал до тех пор, пока ваши гости не почувствуют всем нутром, что вы на их стороне</p>
+            <cite>Дэнни Мейер</cite>
+          </blockquote>
+          <div class="nk-gap-3 mt-10 hidden-md-down"></div>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="">
+        <div>
+          <blockquote class="nk-blockquote-style-1 text-white">
+            <p>Суть не в том, как больше зарабатывать, а в том, как больше делать для других</p>
+            <cite>Нил Блюменталь</cite>
+          </blockquote>
+          <div class="nk-gap-3 mt-10 hidden-md-down"></div>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="">
+        <div>
+          <blockquote class="nk-blockquote-style-1 text-white">
+            <p>Если ты начинаешь считать себя совершенством, развитие на этом останавливается</p>
+            <cite>Джессика Альба</cite>
+          </blockquote>
+          <div class="nk-gap-3 mt-10 hidden-md-down"></div>
+        </div>
+      </mat-tab>
+
+    </mat-tab-group>
+
+
+
+
+    <!-- END: Carousel -->
+  </div>
+  <div class="nk-gap-4 mt-3"></div>
+</div>
+<!-- END: Reviews -->
+
+<!-- START: Blog -->
+<div class="nk-box bg-gray-1" id="blog">
+  <div class="nk-gap-4 mt-5"></div>
+
+  <h2 class="text-xs-center display-4">Наши новости</h2>
+
+  <div class="nk-gap mnt-6"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="text-xs-center">
+          Мелочи жизни в простых решениях
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nk-gap-2 mt-12"></div>
+  <div class="container">
+    <!-- START: Carousel -->
+
+    <mat-tab-group>
+      <mat-tab label="">
+
+        <div *ngFor='let article of blogList | slice:0:3'>
+          <div>
+            <div class="col-md-4">
+              <div class="nk-blog-post" [routerLink]='["/article", article.$key]'>
+                <div class="nk-post-thumb">
+                  <a>
+                    <img [src]="article.img" [alt]="article.title" class="nk-img-stretch">
+                  </a>
+                  <div class="nk-post-category"><a>{{ article.type }}</a></div>
+                </div>
+                <h2 class="nk-post-title h4"><a>{{ article.title }}</a></h2>
+                <div class="nk-post-date">
+                  {{ article.timeStamp | date: "fullDate" }}
+                </div>
+                <div class="nk-post-text">
+                  <p>
+                    {{ article.body | slice:0:255 }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="nk-gap-1"></div>
+          </div>
+
+        </div>
+      </mat-tab>
+
+
+      <mat-tab label="">
+
+        <div *ngFor='let article of blogList | slice:3:6'>
+          <div>
+            <div class="col-md-4">
+              <div class="nk-blog-post" [routerLink]='["/article", article.$key]'>
+                <div class="nk-post-thumb">
+                  <a>
+                    <img [src]="article.img" [alt]="article.title" class="nk-img-stretch">
+                  </a>
+                  <div class="nk-post-category"><a>{{ article.type }}</a></div>
+                </div>
+                <h2 class="nk-post-title h4"><a>{{ article.title }}</a></h2>
+                <div class="nk-post-date">
+                  {{ article.timeStamp | date: "fullDate" }}
+                </div>
+                <div class="nk-post-text">
+                  <p>
+                    {{ article.body | slice:0:255 }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="nk-gap-1"></div>
+          </div>
+
+        </div>
+      </mat-tab>
+
+
+    </mat-tab-group>
+
+
+    <div class="nk-carousel-2 nk-carousel-x2 nk-carousel-no-margin nk-carousel-all-visible nk-blog-isotope" data-dots="true">
+      <div class="nk-carousel-inner">
+
+      </div>
+    </div>
+    <!-- END: Carousel -->
+  </div>
+  <div class="nk-gap-5 mt-20"></div>
+</div>
+<!-- END: Blog -->
+
+<!-- START: Contact Info -->
+<div id="contacts">
+  <div class="vertical-gap">
+    <!-- <div class="col-md-12"> -->
+      <div class="contact-map">
+        <!-- <img src="../assets/images/new/15.jpg"> -->
+      </div>
+    <!-- </div> -->
+
+    <div class="container">
+      <div class="row vertical-gap">
+
+    <div class='col-lg-1 hidden-lg-down'></div>
+    <div class="col-lg-4 col-sm-12 contact-info adress">
+      <!-- START: Info -->
+      <h2 class="display-4">Наши контакты:</h2>
+
+      <ul class="nk-contact-info">
+        <li>
+          <strong>Адрес:</strong><br>ул.Эжена Потье, д.12, корп.2,<br> г.Киев, Украина, 03680</li>
+        <li>
+          <strong>Телефон:</strong><br>+38 (067) 509-57-60</li>
+        <li>
+          <strong>Электронная почта:</strong><br>ak@flyhigh.com.ua, gk@flyhigh.com.ua </li>
+        <li>
+          <strong>Контактное лицо:</strong><br>Александр Кошель</li>
+      </ul>
+      <!-- END: Info -->
+    </div>
+    <div class="col-lg-7 col-sm-12 contact-info form">
+      <!-- START: Form -->
+      <form class="nk-form nk-form-ajax"
+            enctype="multipart/form-data"
+            [formGroup]='profileForm'
+            (ngSubmit)='onSubmit()'>
+        <div class="row vertical-gap">
+          <div class="col-md-6">
+            <!--test for spam input-->
+            <input id="checkme"
+                   type="text"
+                   name="checkme"
+                   style='display: none;'
+                   formControlName='checkme'/>
+            <!--the rest of your form-->
+            <input type="text" class="form-control required"
+                   name="name" placeholder="Как к вам обращаться?"
+                   formControlName='name'>
+            <span class="validate"
+                  *ngIf="profileForm.get('name').invalid && (profileForm.get('name').dirty || profileForm.get('name').touched)">
+                Пожалуйста, введите свое Имя
+            </span>
+          </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control required"
+                   name="email" placeholder="Ваш емейл"
+                   formControlName='email'>
+            <span class="validate"
+                  *ngIf="profileForm.get('email').invalid && profileForm.get('email').touched">
+                Пожалуйста, введите корректный емейл
+            </span>
+          </div>
+        </div>
+
+        <div class="nk-gap-1"></div>
+        <input type="text" class="form-control required"
+               name="title" placeholder="Тема"
+               formControlName='topic'>
+        <span class="validate"
+              *ngIf="profileForm.get('topic').invalid && (profileForm.get('topic').dirty || profileForm.get('topic').touched)">
+                Пожалуйста, введите тему вашего запроса
+        </span>
+
+        <div class="nk-gap-1"></div>
+        <textarea class="form-control required" name="message"
+                  rows="8" placeholder="В чем ваша потребность?"
+                  aria-required="true"
+                  formControlName='textarea'></textarea>
+        <span class="validate"
+              *ngIf="profileForm.get('textarea').invalid && (profileForm.get('textarea').dirty || profileForm.get('textarea').touched)">
+                Пожалуйста, введите вашу потребность
+        </span>
+        <div class="nk-gap-1"></div>
+        <div class="nk-form-response-success"></div>
+        <div class="nk-form-response-error"></div>
+        <button type="submit" class="nk-btn"
+                [disabled]="!profileForm.valid">Отправить запрос</button>
+      </form>
+      <!-- END: Form -->
+    </div>
+
+  </div>
+  <div class="nk-gap-5"></div>
+</div>
+<!-- END: Contact Info -->
+
+
+
+
+

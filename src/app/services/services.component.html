@@ -1,0 +1,55 @@
+<!-- START: Header Title -->
+<div class="nk-header-title nk-header-title-lg">
+  <div class="bg-image">
+    <div [style.background-image]="getBackground(service?.img)"></div>
+
+  </div>
+  <div class="nk-header-table">
+    <div class="nk-header-table-cell">
+      <div class="container">
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- END: Header Title -->
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+
+      <!-- START: Post -->
+      <div class="nk-blog-post nk-blog-post-single nk-service-post">
+        <h1 class="display-4">{{ service?.title}}</h1>
+        <fh-loading-spinner *ngIf='showSpinner'></fh-loading-spinner>
+
+
+        <!-- START: Post Text -->
+        <div class="nk-post-text">
+          <p *ngFor='let p of service?.body'>
+            {{ p.p }}
+          </p>
+
+        </div>
+      </div>
+      <!-- END: Post -->
+
+      <div class="nk-gap-3"></div>
+    </div>
+  </div>
+</div>
+
+<!-- START: Pagination -->
+<div class="nk-pagination nk-pagination-center">
+  <div class="container">
+  </div>
+</div>
+<!-- END: Pagination -->
